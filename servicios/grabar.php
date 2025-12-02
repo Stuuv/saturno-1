@@ -53,7 +53,7 @@ if (isset($data->id_unidad) && isset($data->tipo) && isset($data->fecha_inicio) 
 
     try {
         $db = Conexion::conectar();
-        $stmt = $db->prepare("INSERT INTO servicios (id_unidad, tipo, fecha_inicio, fecha_fin, fecha_vencimiento, monto, estado, num_periodos, comentarios, id_factura, periodo_pago, tarjeta_sim,iccid) VALUES (:id_unidad, :tipo, :fecha_inicio, :fecha_fin, :fecha_vencimiento, :monto, :estado, :num_periodos, :comentarios, :id_factura, :periodo_pago, :tarjeta_sim,:idcicd)");
+        $stmt = $db->prepare("INSERT INTO servicios (id_unidad, tipo, fecha_inicio, fecha_fin, fecha_vencimiento, monto, estado, num_periodos, comentarios, id_factura, periodo_pago, tarjeta_sim,iccid) VALUES (:id_unidad, :tipo, :fecha_inicio, :fecha_fin, :fecha_vencimiento, :monto, :estado, :num_periodos, :comentarios, :id_factura, :periodo_pago, :tarjeta_sim,:iccid)");
         
         $stmt->bindParam(':id_unidad', $id_unidad);
         $stmt->bindParam(':tipo', $tipo);
@@ -67,7 +67,7 @@ if (isset($data->id_unidad) && isset($data->tipo) && isset($data->fecha_inicio) 
         $stmt->bindParam(':id_factura', $id_factura);
         $stmt->bindParam(':periodo_pago', $periodo_pago);
         $stmt->bindParam(':tarjeta_sim', $tarjeta_sim);
-        $stmt->bindParam(':idcicd', $iccid);
+        $stmt->bindParam(':iccid', $iccid);
 
         if ($stmt->execute()) {
             $response['success'] = true;

@@ -22,7 +22,7 @@ try {
         isset($data->representante) &&
         isset($data->folio_factura)
     ) {
-        $sentencia = $db->prepare("INSERT INTO empresa (nombre, direccion, telefono, correo, rfc, representante, folio_factura) VALUES (:nombre, :direccion, :telefono, :correo, :rfc, :representante, :folio_factura)");
+        $sentencia = $db->prepare("INSERT INTO empresas (nombre, direccion, telefono, correo, rfc, representante, folio_factura) VALUES (:nombre, :direccion, :telefono, :correo, :rfc, :representante, :folio_factura)");
 
         $sentencia->bindParam(':nombre', $data->nombre);
         $sentencia->bindParam(':direccion', $data->direccion);

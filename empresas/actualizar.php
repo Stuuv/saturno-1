@@ -26,7 +26,7 @@ try {
         isset($data->representante) &&
         isset($data->folio_factura)
     ) {
-        $sentencia = $db->prepare("UPDATE empresa SET nombre = :nombre, direccion = :direccion, telefono = :telefono, correo = :correo, rfc = :rfc, representante = :representante, folio_factura = :folio_factura WHERE id = :id");
+        $sentencia = $db->prepare("UPDATE empresas SET nombre = :nombre, direccion = :direccion, telefono = :telefono, correo = :correo, rfc = :rfc, representante = :representante, folio_factura = :folio_factura WHERE id = :id");
 
         $sentencia->bindParam(':id', $data->id);
         $sentencia->bindParam(':nombre', $data->nombre);

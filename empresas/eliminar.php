@@ -17,7 +17,7 @@ $data = json_decode(file_get_contents("php://input"));
 // Check if data is not empty
 if (!empty($data->id)) {
     // Prepare the SQL statement to delete the company
-    $sentencia = $db->prepare("DELETE FROM empresa WHERE id = :id");
+    $sentencia = $db->prepare("DELETE FROM empresas WHERE id = :id");
 
     // Bind the data
     $sentencia->bindParam(':id', $data->id);

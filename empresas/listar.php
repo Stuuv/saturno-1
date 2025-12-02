@@ -5,7 +5,7 @@ require_once '../conexion.php';
 
 try {
     $conexion = Conexion::conectar();
-    $stmt = $conexion->prepare("SELECT id, nombre, direccion, telefono, correo, rfc, representante, folio_factura FROM empresa ORDER BY nombre");
+    $stmt = $conexion->prepare("SELECT id, nombre, direccion, telefono, correo, rfc, representante, folio_factura FROM empresas ORDER BY nombre");
     $stmt->execute();
 
     $empresas = $stmt->fetchAll(PDO::FETCH_ASSOC);
